@@ -1,0 +1,1146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.3 r1808647">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="BP16_GuestResV01" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="pEnvURL_pt1" elementType="Argument">
+            <stringProp name="Argument.name">pEnvURL_pt1</stringProp>
+            <stringProp name="Argument.value">pt1.test-arg-uk.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pTimer_Random" elementType="Argument">
+            <stringProp name="Argument.name">pTimer_Random</stringProp>
+            <stringProp name="Argument.value">500</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pTimer_Min" elementType="Argument">
+            <stringProp name="Argument.name">pTimer_Min</stringProp>
+            <stringProp name="Argument.value">1000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pEnvURL_bo" elementType="Argument">
+            <stringProp name="Argument.name">pEnvURL_bo</stringProp>
+            <stringProp name="Argument.value">basket-orchestrator-v1-pt.service.eu-west-1.staging.deveng.systems</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pEnvURL_ui" elementType="Argument">
+            <stringProp name="Argument.name">pEnvURL_ui</stringProp>
+            <stringProp name="Argument.value">ui-basket-v7.public.eu-west-1.production.deveng.systems</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${__machineName()}_BP16_GuestResV01" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">300</stringProp>
+        <longProp name="ThreadGroup.start_time">1481116852000</longProp>
+        <longProp name="ThreadGroup.end_time">1481116852000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <stringProp name="TestPlan.comments">600</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config_userIds and password" enabled="false">
+          <stringProp name="filename">/opt/jmeter/apache-jmeter-5.4/bin/ArgosAWS_UK_PT/Data/pUserId_PrePayV43.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+          <stringProp name="TestPlan.comments">c:\apache-jmeter-3.3\bin\Argos_PerformanceProjects\Data\pUserId_PrePayV43.csv</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+        </CSVDataSet>
+        <hashTree/>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="TrolleySize" enabled="true">
+          <stringProp name="maximumValue">100</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
+          <stringProp name="outputFormat"></stringProp>
+          <boolProp name="perThread">false</boolProp>
+          <stringProp name="randomSeed"></stringProp>
+          <stringProp name="variableName">TrolleySize</stringProp>
+        </RandomVariableConfig>
+        <hashTree/>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShellPreProcessor_TrolleySize_and_ProductCount" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import org.apache.commons.lang3.StringUtils;
+import java.util;
+
+int i = 0;
+vars.put(&quot;ProductIdCount&quot;, String.valueOf(i));
+
+
+//int matches = StringUtils.countMatches(new String(data), &quot;errorCode&quot;);
+//vars.put(&quot;LoginFailureCount&quot;, String.valueOf(matches));
+
+//1 - 90
+if (( ${TrolleySize} &gt; 0) &amp;&amp;  (${TrolleySize} &lt; 91))
+	{
+	  vars.put(&quot;BasketSize&quot;,&quot;2&quot;);
+	}
+//91-100
+
+if (( ${TrolleySize} &gt; 91) &amp;&amp;  (${TrolleySize} &lt; 100))
+	{
+	  vars.put(&quot;BasketSize&quot;,&quot;3&quot;);
+	}</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">${BasketSize}</stringProp>
+          <stringProp name="TestPlan.comments">${BasketSize}</stringProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="AddItemToBasket" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;productId&quot;: &quot;${pProductId}&quot;,&#xd;
+	&quot;quantity&quot;: 1&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${pEnvURL_bo}</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/basket/items</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">9805952</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">max-age=0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, sdch</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <com.blazemeter.jmeter.RandomCSVDataSetConfig guiclass="com.blazemeter.jmeter.RandomCSVDataSetConfigGui" testclass="com.blazemeter.jmeter.RandomCSVDataSetConfig" testname="RandCSVGuestReservation_pPartNumbers" enabled="true">
+              <stringProp name="TestPlan.comments">C:\apache-jmeter-3.3\bin\Argos_PerformanceProjects\Data\GuestRes_pPartNumbers.csv</stringProp>
+              <stringProp name="filename">/opt/jmeter/apache-jmeter-3.3/bin/Argos_PerformanceProjects/pt1/Data/GuestRes_pPartNumbers.csv</stringProp>
+              <stringProp name="fileEncoding">UTF-8</stringProp>
+              <stringProp name="delimiter">,</stringProp>
+              <stringProp name="variableNames">pProductId</stringProp>
+              <boolProp name="randomOrder">true</boolProp>
+              <boolProp name="ignoreFirstLine">true</boolProp>
+              <boolProp name="rewindOnTheEndOfList">true</boolProp>
+              <boolProp name="independentListPerThread">false</boolProp>
+            </com.blazemeter.jmeter.RandomCSVDataSetConfig>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShellPreProcessor_transfer_cookies" enabled="false">
+              <boolProp name="resetInterpreter">true</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import org.apache.jmeter.protocol.http.control.Cookie;
+
+ 
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue1 = vars.get(&quot;WC_USERACTIVITY&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_USERACTIVITY_&quot;+vars.get(&quot;WC_SESSIONID&quot;)+&quot;&quot;, cookieValue1 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1); 
+ctx.getCurrentSampler().getCookieManager().add(cookie); 
+
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue2 = vars.get(&quot;COOKIE_WC_PERSISTENT&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_PERSISTENT&quot;, cookieValue2 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie); 
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue3 = vars.get(&quot;COOKIE_PersonalizationCookie&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;PersonalizationCookie&quot;, cookieValue3 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie); 
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue4 = vars.get(&quot;COOKIE_Apache&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;Apache&quot;, cookieValue4 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie); 
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue5 = vars.get(&quot;COOKIE_JSESSIONID&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;JSESSIONID&quot;, cookieValue5 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue6 = vars.get(&quot;COOKIE_WC_SESSION_ESTABLISHED&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_SESSION_ESTABLISHED&quot;, cookieValue6 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue7 = vars.get(&quot;COOKIE_WC_ACTIVEPOINTER&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_ACTIVEPOINTER&quot;, cookieValue7 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue8 = vars.get(&quot;COOKIE_UserSessionCookie&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;UserSessionCookie&quot;, cookieValue8 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue1 = vars.get(&quot;WC_AUTHENTICATION&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_AUTHENTICATION_&quot;+vars.get(&quot;WC_SESSIONID&quot;)+&quot;&quot;, cookieValue1 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1); 
+ctx.getCurrentSampler().getCookieManager().add(cookie); 
+
+
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue9 = vars.get(&quot;COOKIE_PersonalizationCookie&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;PersonalizationCookie&quot;, cookieValue9 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue10 = vars.get(&quot;COOKIE_UserSessionCookie&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;UserSessionCookie&quot;, cookieValue10 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+UserRegistrationType
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue11 = vars.get(&quot;COOKIE_UserRegistrationType&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;UserSessionCookie&quot;, cookieValue11 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+
+/*
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue9 = vars.get(&quot;COOKIE_UserSessionCookie&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_AUTHENTICATION_&quot;, cookieValue9 , &quot;${pEnvURL_bo}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+
+*/
+
+
+
+log.info(&quot;Cookie added: &quot;+cookie);</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${pTimer_Min}</stringProp>
+              <stringProp name="RandomTimer.range">${pTimer_Random}</stringProp>
+            </GaussianRandomTimer>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetBasket" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${pEnvURL_bo}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/basket</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">max-age=0</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, sdch</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor_itemId" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">itemId</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;itemId&quot;:&quot;(.*?)&quot;,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">0</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor_basketFound" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+            <stringProp name="RegexExtractor.refname">basketFound</stringProp>
+            <stringProp name="RegexExtractor.regex">(.*)</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">0</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor_stockCheck" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">stockCheck</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.availability.basket.collection.collectable</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor_postCodes" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pPostCodes</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.localisation.deliverTo</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor_storeId" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pStoreId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.localisation.collectFrom</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor_storeName" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pStoreName</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.stores.current.name</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegularExpressionExtractor_WC_SESSIONID" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+            <stringProp name="RegexExtractor.refname">WC_SESSIONID</stringProp>
+            <stringProp name="RegexExtractor.regex">WC_USERACTIVITY_(.+?)=</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegularExpressionExtractor_WC_USERACTIVITY" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+            <stringProp name="RegexExtractor.refname">WC_USERACTIVITY</stringProp>
+            <stringProp name="RegexExtractor.regex">WC_USERACTIVITY_${WC_SESSIONID}=(.+?);</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegularExpressionExtractor_WC_AUTHENTICATION" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+            <stringProp name="RegexExtractor.refname">WC_AUTHENTICATION</stringProp>
+            <stringProp name="RegexExtractor.regex">WC_AUTHENTICATION_${WC_SESSIONID}=(.+?);</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">${pTimer_Min}</stringProp>
+            <stringProp name="RandomTimer.range">${pTimer_Random}</stringProp>
+          </GaussianRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller_VerifyGetBasket" enabled="false">
+          <stringProp name="IfController.condition">${__javaScript(&quot;${basketFound}&quot; == &quot;404&quot;)}</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Exit current iteration &amp; go to next loop iteration" enabled="true">
+            <intProp name="ActionProcessor.action">3</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration"></stringProp>
+          </TestAction>
+          <hashTree/>
+        </hashTree>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="false">
+          <stringProp name="TestPlan.comments">${__javaScript(&quot;${ProductIdCount}&quot; !=&quot;0&quot;)}</stringProp>
+          <stringProp name="WhileController.condition">${__javaScript(&quot;${stockCheck_1}&quot; != &quot;true&quot;)} </stringProp>
+        </WhileController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LocaliseBasket" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+&quot;deliverTo&quot;: &quot;${pPostCodes_1}&quot;,&#xd;
+&quot;collectFrom&quot;: &quot;${pStoreId_1}&quot; ,&#xd;
+&quot;fulfilmentType&quot;: &quot;collection&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${pEnvURL_bo}</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/basket:localise</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">SG11XN  ${pPostCodes}</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">max-age=0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, sdch</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <com.blazemeter.jmeter.RandomCSVDataSetConfig guiclass="com.blazemeter.jmeter.RandomCSVDataSetConfigGui" testclass="com.blazemeter.jmeter.RandomCSVDataSetConfig" testname="RandCSVGuestReservation_pPostCodes" enabled="true">
+              <stringProp name="TestPlan.comments">C:\apache-jmeter-3.3\bin\Argos_PerformanceProjects\Data\pPostCodes.csv</stringProp>
+              <stringProp name="filename">/opt/jmeter/apache-jmeter-5.4/bin/ArgosAWS_UK_PT/Data/pPostCodes.csv</stringProp>
+              <stringProp name="fileEncoding">UTF-8</stringProp>
+              <stringProp name="delimiter">,</stringProp>
+              <stringProp name="variableNames">pPostCodes_1</stringProp>
+              <boolProp name="randomOrder">false</boolProp>
+              <boolProp name="ignoreFirstLine">true</boolProp>
+              <boolProp name="rewindOnTheEndOfList">true</boolProp>
+              <boolProp name="independentListPerThread">false</boolProp>
+            </com.blazemeter.jmeter.RandomCSVDataSetConfig>
+            <hashTree/>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config_StoreId" enabled="true">
+              <stringProp name="filename">/opt/jmeter/apache-jmeter-5.4/bin/ArgosAWS_UK_PT/Data/pStorelist.csv</stringProp>
+              <stringProp name="fileEncoding"></stringProp>
+              <stringProp name="variableNames">pStoreId_1</stringProp>
+              <boolProp name="ignoreFirstLine">false</boolProp>
+              <stringProp name="delimiter">,</stringProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">true</boolProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="shareMode">shareMode.all</stringProp>
+              <stringProp name="TestPlan.comments">C:\apache-jmeter-3.3\bin\Argos_PerformanceProjects\Data\pStorelist.csv</stringProp>
+            </CSVDataSet>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor_storeName" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">pStoreName_1</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.stores.current.name</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor_stockCheck" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">stockCheck</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.availability.basket.collection.collectable</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor_stockCheck" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">pStoreName</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.stores.current.name</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor_storePostCode" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">pStorePostCode_1</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.stores.current.postcode</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="false">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import org.apache.commons.lang3.StringUtils;
+import java.util;
+
+vars.put(&quot;stockCheck_1&quot;, String.valueOf(stockCheck_local_1));
+</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+            <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${pTimer_Min}</stringProp>
+              <stringProp name="RandomTimer.range">${pTimer_Random}</stringProp>
+            </GaussianRandomTimer>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Checkout" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="fulfilment" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">collection</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">fulfilment</stringProp>
+              </elementProp>
+              <elementProp name="p_o" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">true</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">p_o</stringProp>
+              </elementProp>
+              <elementProp name="collectFrom" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${pStoreId_1}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">collectFrom</stringProp>
+              </elementProp>
+              <elementProp name="storeName" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${pStoreName_1}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">storeName</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${pEnvURL_pt1}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/webapp/wcs/stores/servlet/Checkout</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://pt1.test-arg-uk.com/product/5444795</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor_userId" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">userId</stringProp>
+            <stringProp name="RegexExtractor.regex">userId=(.*?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">0</stringProp>
+            <stringProp name="RegexExtractor.match_number"></stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor_authToken" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">authToken</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;input type=&quot;hidden&quot; name=&quot;authToken&quot; value=&quot;(.*?)&quot; id=&quot;authtoken_1&quot;/&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">0</stringProp>
+            <stringProp name="RegexExtractor.match_number"></stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor_selectedStoreMapURL" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">selectedStoreMapURL</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;input type=&quot;hidden&quot; name=&quot;selectedStoreMapURL&quot; value=&quot;(.*?)&quot; /&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">0</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor_orderItemId" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">orderItemId</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;input type=&quot;hidden&quot; name=&quot;orderItemId&quot; value=&quot;(.*?)&quot; /&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">0</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor_emailAddress" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">emailAddress</stringProp>
+            <stringProp name="RegexExtractor.regex">input type=&quot;hidden&quot; name=&quot;tempEmailAddressHolder&quot; value=&quot;(.*?)&quot; /&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">0</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+            <stringProp name="TestPlan.comments">input type=&quot;hidden&quot; name=&quot;tempEmailAddressHolder&quot; value=&quot;peak10081805480000000024823test@peaktestdropmebox.co.uk&quot; /&gt;</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShellPreProcessor_transfer_cookies" enabled="true">
+            <boolProp name="resetInterpreter">true</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import org.apache.jmeter.protocol.http.control.Cookie;
+
+ 
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue1 = vars.get(&quot;WC_USERACTIVITY&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_USERACTIVITY_&quot;+vars.get(&quot;WC_SESSIONID&quot;)+&quot;&quot;, cookieValue1 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1); 
+ctx.getCurrentSampler().getCookieManager().add(cookie); 
+
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue2 = vars.get(&quot;COOKIE_WC_PERSISTENT&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_PERSISTENT&quot;, cookieValue2 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie); 
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue3 = vars.get(&quot;COOKIE_PersonalizationCookie&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;PersonalizationCookie&quot;, cookieValue3 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie); 
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue4 = vars.get(&quot;COOKIE_Apache&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;Apache&quot;, cookieValue4 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie); 
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue5 = vars.get(&quot;COOKIE_JSESSIONID&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;JSESSIONID&quot;, cookieValue5 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue6 = vars.get(&quot;COOKIE_WC_SESSION_ESTABLISHED&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_SESSION_ESTABLISHED&quot;, cookieValue6 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue7 = vars.get(&quot;COOKIE_WC_ACTIVEPOINTER&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_ACTIVEPOINTER&quot;, cookieValue7 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue8 = vars.get(&quot;COOKIE_UserSessionCookie&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;UserSessionCookie&quot;, cookieValue8 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue1 = vars.get(&quot;WC_AUTHENTICATION&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_AUTHENTICATION_&quot;+vars.get(&quot;WC_SESSIONID&quot;)+&quot;&quot;, cookieValue1 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1); 
+ctx.getCurrentSampler().getCookieManager().add(cookie); 
+
+
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue9 = vars.get(&quot;COOKIE_PersonalizationCookie&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;PersonalizationCookie&quot;, cookieValue9 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+
+
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue10 = vars.get(&quot;COOKIE_UserSessionCookie&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;UserSessionCookie&quot;, cookieValue10 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+//UserRegistrationType
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+//String cookieValue11 = vars.get(&quot;COOKIE_UserRegistrationType&quot;);
+// Create a new Cookie and add it to the cookie manager
+//Cookie cookie = new Cookie(&quot;UserSessionCookie&quot;, cookieValue11 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+//ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+
+/*
+// Retrieve the cookie value from a JMeter variable called &quot;myCookieValue&quot;
+String cookieValue9 = vars.get(&quot;COOKIE_UserSessionCookie&quot;);
+// Create a new Cookie and add it to the cookie manager
+Cookie cookie = new Cookie(&quot;WC_AUTHENTICATION_&quot;, cookieValue9 , &quot;${pEnvURL_pt1}&quot;, &quot;/&quot;, false, -1);
+ctx.getCurrentSampler().getCookieManager().add(cookie);
+
+
+*/
+
+
+
+log.info(&quot;Cookie added: &quot;+cookie);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">${pTimer_Min}</stringProp>
+            <stringProp name="RandomTimer.range">${pTimer_Random}</stringProp>
+          </GaussianRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ArgosSelectStoreAndReserveAvailability" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="oid_379494459" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">oid_379494459</stringProp>
+                <stringProp name="Argument.value">P</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="authToken" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">authToken</stringProp>
+                <stringProp name="Argument.value">${authToken1}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="checkoutFromApps" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">checkoutFromApps</stringProp>
+                <stringProp name="Argument.value">false</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">10151</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="langId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">langId</stringProp>
+                <stringProp name="Argument.value">110</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="catalogId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">catalogId</stringProp>
+                <stringProp name="Argument.value">1500002951</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="thisPage" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">thisPage</stringProp>
+                <stringProp name="Argument.value">StoreAvailabilityView</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="selectedstore" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">selectedstore</stringProp>
+                <stringProp name="Argument.value">${pStoreId_1}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="selectedStoreMapURL" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">selectedStoreMapURL</stringProp>
+                <stringProp name="Argument.value">QASStoreLocator%3Fstrnbr%3D${pStoreId_1}%26postcode%3D${pStorePostCode_1}%26townName%3D%26distance%3D0.00%26qasDisplayTerm%3D${postcode}%26qasSearchTerm%3D546103%2C187290</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="searchStrType" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">searchStrType</stringProp>
+                <stringProp name="Argument.value">Town</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="postcode" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">postcode</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="townName" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">townName</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="doMessaging" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">doMessaging</stringProp>
+                <stringProp name="Argument.value">true</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="workflow" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">workflow</stringProp>
+                <stringProp name="Argument.value">ARGOS_CHECKOUT_FLOW</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="argosImpl" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">argosImpl</stringProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="userChanges" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">userChanges</stringProp>
+                <stringProp name="Argument.value">false</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="prepayFlow" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">prepayFlow</stringProp>
+                <stringProp name="Argument.value">true</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="display" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">display</stringProp>
+                <stringProp name="Argument.value">editContactAddress</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="isEdit" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">isEdit</stringProp>
+                <stringProp name="Argument.value">false</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="pVersion" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">pVersion</stringProp>
+                <stringProp name="Argument.value">null</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="preferredStoreId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">preferredStoreId</stringProp>
+                <stringProp name="Argument.value">${preferredStoreId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="orderItemId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">orderItemId</stringProp>
+                <stringProp name="Argument.value">${orderId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="storeName" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">storeName</stringProp>
+                <stringProp name="Argument.value">${currentStoreName}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="multiOrder" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">multiOrder</stringProp>
+                <stringProp name="Argument.value">false</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="payNow" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">payNow</stringProp>
+                <stringProp name="Argument.value">false</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="continueReserve.x" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">continueReserve.x</stringProp>
+                <stringProp name="Argument.value">true</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="tempMobileNumber" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">tempMobileNumber</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="tempEmailAddressHolder" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">tempEmailAddressHolder</stringProp>
+                <stringProp name="Argument.value">${pUserId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="tempEmailAddress" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">tempEmailAddress</stringProp>
+                <stringProp name="Argument.value">${pUserId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="email" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">email</stringProp>
+                <stringProp name="Argument.value">${pUserId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="cso_mobile" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">cso_mobile</stringProp>
+                <stringProp name="Argument.value">07792848632</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${pEnvURL_pt1}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/webapp/wcs/stores/servlet/ArgosSelectStoreAndReserveAvailability?userId=${userId}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Detected the start of a redirect chain   nanuneenu@dropmebox.co.uk   nanuneenu@dropmebox.co.uk</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://pt1.test-arg-uk.com/webapp/wcs/stores/servlet/StoreAvailabilityView?krypto=NLSM9LEwibzR1QyeMFMse5wI%2BQgqY3RWGddbOzpHyeS8ipSbsJotJNlEjtAHqwKV4BT8PEO6awZT%0AQCzoVKhmP0oQr5I4xlE%2BFYWwY%2BsNGJR81kbpDANaszGR0nbkhMJ01cs70Ndi7i4UrMoTEA91RBPP%0A7a%2B85VqrPloktM1SPTjp6XomT%2B29YJmx%2BMzhks01LOwN%2BhxSAGJew9XSHivUzp3hATTt3HXhdBsg%0Alqfq%2FKkvCmOK726oP6BeyOIt1jdXD9HLl8pORWzPet9bG7sQj5%2Fp9i3W%2FHQqu%2B6KK%2FObaKVTDkcc%0AI0C8DGLiyaSOAdpM6mndbWl7IbJwNiOJGb3gtiurhTmZItjPn9TzXgb%2BDmL8KMD1Y%2FrjnXHNy%2Bnn%0AIO1nE8lGZsp2hSd%2FpCzvzCH%2FkpuSNyxnu8r58345hKe2HEg%3D</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">${pTimer_Min}</stringProp>
+            <stringProp name="RandomTimer.range">${pTimer_Random}</stringProp>
+          </GaussianRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan>
